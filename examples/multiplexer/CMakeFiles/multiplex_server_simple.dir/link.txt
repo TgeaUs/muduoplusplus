@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/multiplex_server_simple.dir/multiplexer_simple.cc.o -o multiplex_server_simple  -lmuduo_net 

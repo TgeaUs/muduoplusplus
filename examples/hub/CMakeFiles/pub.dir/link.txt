@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/pub.dir/pub.cc.o -o pub   -L/home/kali/Desktop/muduo-cpp17/examples/hub  libmuduo_pubsub.a -lmuduo_net 

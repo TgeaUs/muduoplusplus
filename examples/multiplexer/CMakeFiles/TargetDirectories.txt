@@ -1,0 +1,5 @@
+/home/kali/Desktop/muduo-cpp17/examples/multiplexer/CMakeFiles/multiplex_server.dir
+/home/kali/Desktop/muduo-cpp17/examples/multiplexer/CMakeFiles/multiplex_server_simple.dir
+/home/kali/Desktop/muduo-cpp17/examples/multiplexer/CMakeFiles/multiplex_demux.dir
+/home/kali/Desktop/muduo-cpp17/examples/multiplexer/CMakeFiles/edit_cache.dir
+/home/kali/Desktop/muduo-cpp17/examples/multiplexer/CMakeFiles/rebuild_cache.dir

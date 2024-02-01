@@ -1,0 +1,5 @@
+/home/kali/Desktop/muduo-cpp17/examples/socks4a/CMakeFiles/balancer.dir
+/home/kali/Desktop/muduo-cpp17/examples/socks4a/CMakeFiles/tcprelay.dir
+/home/kali/Desktop/muduo-cpp17/examples/socks4a/CMakeFiles/socks4a.dir
+/home/kali/Desktop/muduo-cpp17/examples/socks4a/CMakeFiles/edit_cache.dir
+/home/kali/Desktop/muduo-cpp17/examples/socks4a/CMakeFiles/rebuild_cache.dir
