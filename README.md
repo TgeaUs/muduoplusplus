@@ -3,11 +3,11 @@
 
 # 动机
 
-代码在muduo-cpp17/examples/signal/signal.cc中
+代码在muduo-cpp17/examples/signal/signal.cc中。
 
 muduo网络库没有跨线程安全通信的机制，比如下面这段代码，两个线程对一个未用锁全局变量进行操作，这是线程不安全的。手动加锁可以解决这个问题。
 
-我使用信号槽的机制来解决在业务层面上不用锁就可以解决跨线程通信
+我使用信号槽的机制来解决在业务层面上不用锁就可以解决跨线程通信。
 
 ```c++
 #include <muduo/base/Logging.h>
@@ -53,9 +53,9 @@ int main()
 
 # 信号槽的版本
 
-代码在muduo-cpp17/examples/signal/signal2.cc中
+代码在muduo-cpp17/examples/signal/signal2.cc中。
 
-这个版本在业务代码中(g_number++)，并没有用到锁就可以实现线程安全，最后结果是200000。 而我们初始化的代码行数仅仅只有五行。以后只需要发信号（一行代码量）就可以保证线程安全了
+这个版本在业务代码中(g_number++)，并没有用到锁就可以实现线程安全，最后结果是200000。 而我们初始化的代码行数仅仅只有五行。以后只需要发信号（一行代码量）就可以保证线程安全了。
 
 ```c++
 
@@ -120,7 +120,7 @@ muduo的使用方法可以去看muduo仓库的examples的使用示例，信号�
 
 唯一需要讲的是MoveToThread类，MoveToThread类启动一个EventLoop，但是永远不会接收网络事件（未来可能把epoll_wait去掉，因为浪费描述符资源）。MoveToThread需要和一个类绑定线程，从而使信号能够发送给MoveToThread启动的线程。
 
-类中需要定义宏HAS_MOVETOTHREAD_OBJ，让这个类有moveToThread的功能。只要这个类调用了moveToThread函数，从此以后只要是这个类对象绑定的槽函数，永远都会在MoveToThread开启的线程中执行。直到MoveToThread.quit()
+类中需要定义宏HAS_MOVETOTHREAD_OBJ，让这个类有moveToThread的功能。只要这个类调用了moveToThread函数，从此以后只要是这个类对象绑定的槽函数，永远都会在MoveToThread开启的线程中执行。直到MoveToThread.quit()。
 
 ```c++
 class SafeThread
@@ -164,7 +164,16 @@ sig(); //发出信号
 ```
 # 注意事项
 
-发出的信号保证在调用MoveToThread::quit()时， 先前发出的信号一定会执行，但是如果自动析构MoveToThread对象，则不保证
+发出的信号保证在调用MoveToThread::quit()时， 先前发出的信号一定会执行，但是如果自动析构MoveToThread对象，则不保证。
+
+# 编译方法
+
+cmake CMakeLists.txt
+make install
+
+然后 g++ xxx.cpp -lmuduo_net -lmuduo_base。 其中xxx是你的文件名。
+
+或者按照muduo仓库的编译方式。
 
 # 缝合的库
 
